@@ -41,7 +41,7 @@ function show(){
  if(params.get("admin")==="1"){
   document.getElementById("reveal").style.display="none";document.getElementById("admin").style.display="block";
   document.querySelector(".sub").textContent="Solo para quien organiza el sorteo.";
-  document.getElementById("links").innerHTML=assignments.map((a,i)=>'<div class="rowitem"><div class="emoji">'+a.emoji+'</div><div class="info"><strong>'+(i+1)+'. '+a.title+'</strong><div class="url">'https://explorer30ciclos.github.io/Halloween/'+a.code+'/'+'</div></div><button class="btn copy" data-url="'https://explorer30ciclos.github.io/Halloween/'+a.code+'/'+'">Copiar enlace</button></div>').join("");
+  document.getElementById("links").innerHTML=assignments.map((a,i)=>'<div class="rowitem"><div class="emoji">'+a.emoji+'</div><div class="info"><strong>'+(i+1)+'. '+a.title+'</strong><div class="url">'+base()+a.code+'/</div></div><button class="btn copy" data-url="'+base()+a.code+'/">Copiar enlace</button></div>').join("");
   document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(b.dataset.url);b.textContent="¡Copiado!";}catch(e){window.prompt("Copia este enlace:",b.dataset.url)}}));return;
  }
  const code=params.get("c");const a=assignments.find(x=>x.code===code);
