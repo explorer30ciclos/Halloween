@@ -36,7 +36,7 @@ const assignments = [
  {code:"chispa-8a6e",title:"Una emoción de Del revés",number:"13",emoji:"🎭",desc:"Alegría, Tristeza, Ira, Asco, Miedo o Ansiedad. Elige una emoción y represéntala con sus colores y personalidad.",theme:"un mundo de emociones"}
 ];
 function base(){return location.origin+location.pathname}
-function revealFinal(){const m=document.getElementById("finalMessage");if(m){m.classList.add("show");document.getElementById("again").textContent="¡Nos vemos el 31! 🎃";}}
+function revealFinal(){const m=document.getElementById("finalMessage");if(m){m.classList.add("show");document.getElementById("again").textContent="Aceptado";}}
 function show(){
  const params=new URLSearchParams(location.search);
  if(params.get("admin")==="1"){
