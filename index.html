@@ -17,7 +17,7 @@
 <header class="top"><div class="eyebrow">✦ Una noche · trece misterios ✦</div><div class="brand">Tu disfraz <span>secreto</span></div><p class="sub">Abre tu señal y descubre quién te toca ser.</p></header>
 <section class="card" id="reveal" aria-live="polite"><div class="secret">Expediente confidencial</div><div class="art" id="art">🎃</div><h1 id="title">Preparando tu misterio…</h1><p class="description" id="description">Un pequeño susto de magia y ya lo tienes.</p><button class="btn" id="again" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">¡Acepto el reto! ✦</button></section>
 <section class="card admin" id="admin"><div class="eyebrow">Panel de organización</div><h2>Los 13 expedientes</h2><p class="warning">Esta lista contiene todos los disfraces. No compartas este enlace con el grupo: cada persona debe recibir solo su enlace individual.</p><div id="links"></div></section>
-<footer class="foot">Halloween · acceso restringido a criaturas curiosas 🦇</footer>
+<footer class="foot">Halloween · tu disfraz te espera 🎃</footer>
 </main>
 <script>
 const assignments = [
@@ -45,7 +45,7 @@ function show(){
   document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(b.dataset.url);b.textContent="¡Copiado!";}catch(e){window.prompt("Copia este enlace:",b.dataset.url)}}));return;
  }
  const code=params.get("c");const a=assignments.find(x=>x.code===code);
- if(!a){document.getElementById("art").textContent="🦇";document.getElementById("title").textContent="Tu expediente aún no está abierto";document.getElementById("description").textContent="Pídele a quien organiza el sorteo tu enlace personal. Cada enlace es distinto y guarda una sorpresa.";document.getElementById("again").style.display="none";return;}
+ if(!a){document.getElementById("art").textContent="🦇";document.getElementById("title").textContent="Tu expediente aún no está abierto";document.getElementById("description").textContent="Pídele a quien organiza el sorteo tu enlace personal. Cada enlace es distinto y guarda tu pista de disfraz.";document.getElementById("again").style.display="none";return;}
  document.getElementById("art").textContent=a.emoji;document.getElementById("title").textContent=a.title;document.getElementById("description").textContent=a.desc;document.title=a.title+" · Tu disfraz secreto";
 }
 show();
