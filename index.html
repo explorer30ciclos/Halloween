@@ -45,7 +45,7 @@ function show(){
   document.querySelectorAll(".copy").forEach(b=>b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(b.dataset.url);b.textContent="¡Copiado!";}catch(e){window.prompt("Copia este enlace:",b.dataset.url)}}));return;
  }
  const code=params.get("c");const a=assignments.find(x=>x.code===code);
- if(!a){document.getElementById("art").textContent="🦇";document.getElementById("title").textContent="Tu expediente aún no está abierto";document.getElementById("description").textContent="Pídele a quien organiza el sorteo tu enlace personal. Cada enlace es distinto y guarda tu pista de disfraz.";document.getElementById("again").style.display="none";return;}
+ if(!a){document.getElementById("art").textContent="🦇";document.getElementById("title").textContent="Tu expediente aún no está abierto";document.getElementById("description").textContent="Pídele a quien organiza el sorteo tu enlace personal. Cada enlace es distinto y no puedes compartirlo con los demás participantes.";document.getElementById("again").style.display="none";return;}
  document.getElementById("art").textContent=a.emoji;document.getElementById("title").textContent=a.title;document.getElementById("description").textContent=a.desc;document.title=a.title+" · Tu disfraz secreto";
 }
 show();
